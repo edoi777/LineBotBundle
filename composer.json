@@ -1,7 +1,7 @@
 {
   "name": "phakpoom/linebot-bundle",
   "license": "proprietary",
-  "type": "library",
+  "type": "symfony-bundle",
   "autoload": {
     "psr-4": {
       "": "src/"

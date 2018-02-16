@@ -13,10 +13,11 @@ class LineBotController extends Controller
 {
     public function hookAction(Request $request, string $botName)
     {
-        $data = $this->container->get(sprintf('linemob.%s.bot', $botName))->run($request->getContent(), $request->headers->get('X-Line-Signature'));
         if ('GET' === $request->getMethod()) {
             return Response::create('It\'s Work!!!');
         }
+
+        $data = $this->container->get(sprintf('linemob.%s.bot', $botName))->run($request->getContent(), $request->headers->get('X-Line-Signature'));
 
         if (true === $this->container->getParameter('kernel.debug')) {
             var_dump($data);
