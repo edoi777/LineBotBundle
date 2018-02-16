@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="line_mob_keyword.registry.reply_message" class="Sylius\Bundle\ResourceBundle\Form\Registry\FormTypeRegistry" />
+        <service class="LineMob\KeywordBundle\Form\Type\ReplyTextMessageType">
+            <argument>%line_mob_keyword.model.reply_text_message.class%</argument>
+            <argument type="collection">
+                <argument>linemob</argument>
+            </argument>
+            <argument /> <!--inject by compiler -->
+            <tag name="line_mob_keyword.reply_message" type="text" label="linemob_keyword.form.message.type.choices.text" />
+            <tag name="form.type" />
+        </service>
+
+        <service class="LineMob\KeywordBundle\Form\Type\ReplyStickerMessageType">
+            <argument>%line_mob_keyword.model.reply_sticker_message.class%</argument>
+            <argument type="collection">
+                <argument>linemob</argument>
+            </argument>
+            <argument /> <!--inject by compiler -->
+            <tag name="line_mob_keyword.reply_message" type="sticker" label="linemob_keyword.form.message.type.choices.sticker" />
+            <tag name="form.type" />
+        </service>
+        <service class="LineMob\KeywordBundle\Form\Type\ReplyImageMessageType">
+            <argument>%line_mob_keyword.model.reply_image_message.class%</argument>
+            <argument type="collection">
+                <argument>linemob</argument>
+            </argument>
+            <argument /> <!--inject by compiler -->
+            <tag name="line_mob_keyword.reply_message" type="image" label="linemob_keyword.form.message.type.choices.image" />
+            <tag name="form.type" />
+        </service>
+        <service class="LineMob\KeywordBundle\Form\Type\ReplyImageMessagePictureType">
+            <argument>%line_mob_keyword.model.reply_image_message_picture.class%</argument>
+            <argument type="collection">
+                <argument>linemob</argument>
+            </argument>
+            <tag name="form.type" />
+        </service>
+    </services>
+</container>

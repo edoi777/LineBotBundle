@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="line_mob_keyword.validator.keyword_unique" class="LineMob\KeywordBundle\Validator\Constraints\KeywordsUniqueValidator">
+            <argument type="service" id="line_mob_keyword.repository.keyword"/>
+            <argument type="service" id="line_mob_keyword.manager.keyword"/>
+            <argument type="service" id="line_mob_keyword.repository.additional_keyword"/>
+            <argument type="service" id="line_mob_keyword.manager.additional_keyword"/>
+            <tag name="validator.constraint_validator" alias="keyword_unique"/>
+        </service>
+    </services>
+</container>

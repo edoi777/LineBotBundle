@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <imports>
+        <import resource="services/**"/>
+    </imports>
+
+    <services>
+        <service id="line_mob_user.manager.user_security" class="LineMob\UserBundle\Manager\LineUserSyliusWebUserManager">
+            <argument type="service" id="sylius.factory.web_user" />
+            <argument type="service" id="sylius.repository.web_user" />
+            <argument type="service" id="security.encoder_factory" />
+            <argument>%line_mob_user.config%</argument>
+        </service>
+         <service id="line_mob_user.audit.line_input_auditor" class="LineMob\UserBundle\Audit\LineInputAuditor">
+             <argument type="service" id="linemob.repository.line_audit_input" />
+             <argument type="service" id="linemob.factory.line_audit_input" />
+             <argument type="service" id="linemob.manager.line_audit_input" />
+             <argument /> <!-- Inject mode by compiler -->
+        </service>
+    </services>
+</container>

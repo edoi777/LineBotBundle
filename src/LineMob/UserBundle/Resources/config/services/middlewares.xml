@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="line_mob_user.middleware.abstract_aware_storage_active_command" class="LineMob\UserBundle\Bot\Storage\Middleware\AbstractAwareStorageActiveCommand" abstract="true" public="false">
+            <argument>%line_mob_user.user.active_cmd_ttl%</argument>
+        </service>
+
+        <service id="line_mob_user.middleware.audit_input" class="LineMob\UserBundle\Bot\Storage\Middleware\AuditInputMiddleware">
+            <argument type="service" id="line_mob_user.audit.line_input_auditor" />
+        </service>
+        <service id="line_mob_user.middleware.storage_connect" class="LineMob\UserBundle\Bot\Storage\Middleware\StorageConnectMiddleware">
+            <argument type="service" id="linemob.repository.line_user" />
+            <argument type="service" id="linemob.factory.line_user" />
+            <argument type="service" id="line_mob_user.manager.user_security" />
+        </service>
+        <service id="line_mob_user.middleware.storage_flush" class="LineMob\UserBundle\Bot\Storage\Middleware\StorageFlushMiddleware">
+            <argument type="service" id="linemob.manager.line_user" />
+        </service>
+
+        <service id="line_mob_user.middleware.register" class="LineMob\UserBundle\Bot\Register\Middleware\RegisterMiddleware" parent="line_mob_user.middleware.abstract_aware_storage_active_command">
+            <argument type="service" id="line_mob_user.manager.user_security" />
+            <argument type="service" id="line_mob_user.workflow.register" />
+            <call method="setTranslator">
+                <argument type="service" id="translator" />
+            </call>
+        </service>
+        <service id="line_mob_user.middleware.logout" class="LineMob\UserBundle\Bot\Logout\Middleware\LogoutMiddleware">
+            <argument type="service" id="line_mob_user.manager.user_security" />
+            <argument>%line_mob_user.user.allow_logout%</argument>
+            <call method="setTranslator">
+                <argument type="service" id="translator" />
+            </call>
+        </service>
+        <service id="line_mob_user.middleware.login" class="LineMob\UserBundle\Bot\Login\Middleware\LoginMiddleware" parent="line_mob_user.middleware.abstract_aware_storage_active_command">
+            <argument type="service" id="line_mob_user.manager.user_security" />
+            <call method="setTranslator">
+                <argument type="service" id="translator" />
+            </call>
+        </service>
+    </services>
+</container>

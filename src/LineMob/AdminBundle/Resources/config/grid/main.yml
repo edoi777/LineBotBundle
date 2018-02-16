@@ -1,0 +1,4 @@
+imports:
+    - { resource: "@LineMobAdminBundle/Resources/config/grid/line_user.yml" }
+    - { resource: "@LineMobAdminBundle/Resources/config/grid/line_audit_input.yml" }
+    - { resource: "@LineMobAdminBundle/Resources/config/grid/line_keyword.yml" }

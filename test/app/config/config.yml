@@ -1,0 +1,48 @@
+imports:
+    - { resource: "./parameters.yml" }
+    - { resource: "@PhpMobMediaBundle/Resources/config/app/main.yml" }
+
+framework:
+    #assets: false
+    translator: { fallbacks: ["%locale%"] }
+    secret: "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+    form: ~
+    csrf_protection: true
+    templating:
+        engines: ['twig']
+    default_locale: "%locale%"
+    session:
+        handler_id: ~
+        storage_id: session.storage.mock_file
+    http_method_override: true
+    test: ~
+
+doctrine:
+    dbal:
+        driver: "%database_driver%"
+        path: "%database_path%"
+        charset: UTF8
+    orm:
+        entity_managers:
+            default:
+                auto_mapping: true
+
+line_mob_line_bot:
+    bots:
+        mock_bot:
+            log: false
+            line_channel_access_token: "%line_channel_access_token%"
+            line_channel_secret: "%line_channel_secret%"
+            use_sender_mocky: true
+            commands:
+                - LineMob\LineBotBundle\Bot\Core\Command\ExitActiveCommand
+            middlewares:
+                - tactician.middleware.locking
+                - linemob.middleware.exit_active_cmd
+
+                - linemob.middleware.active_switcher
+                - linemob.middleware.fallback
+
+                - tactician.middleware.command_handler

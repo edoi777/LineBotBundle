@@ -1,0 +1,6 @@
+/vendor/
+/components/
+/test/app/cache/*
+/test/web
+/test/var/media/*
+!/test/var/media/.gitkeep

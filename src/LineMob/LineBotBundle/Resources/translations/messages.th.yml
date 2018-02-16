@@ -1,0 +1,5 @@
+linemob_bot:
+    fallback:
+        default: 'Fallback message'
+    exit:
+        success: 'Exit command complete :)'

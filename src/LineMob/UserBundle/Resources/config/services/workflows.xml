@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="line_mob_user.workflow.register" class="LineMob\UserBundle\Bot\Register\RegisterWorkflow">
+            <argument type="service" id="linemob.registry.workflow" />
+            <argument type="service" id="line_mob_user.manager.user_security" />
+            <argument>%line_mob_user.config%</argument>
+            <call method="setTranslator">
+                <argument type="service" id="translator" />
+            </call>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,29 @@
+linemob_keyword:
+    form:
+        additional_keyword:
+            word:
+                label: 'คำใกล้เคียง'
+        keyword:
+            word:
+                label: 'คำหลัก'
+            additional_keyword:
+                label: 'คำใกล้เคียง'
+            messages:
+                label: 'ข้อความตอบกลับ สูงสุด 5 ข้อความ'
+        message:
+            type:
+                label: 'ประเภทข้อความ'
+                choices:
+                    image: 'รูปภาพ'
+                    sticker: 'สติกเกอร์'
+                    text: 'ข้อความ'
+            position:
+                label: 'ลำดับ'
+        reply_text_message:
+            text:
+                label: 'ข้อความ'
+        reply_sticker_message:
+            package_id:
+                label: 'STKPKGID https://developers.line.me/media/messaging-api/messages/sticker_list.pdf'
+            package_code:
+                label: 'STRID https://developers.line.me/media/messaging-api/messages/sticker_list.pdf'

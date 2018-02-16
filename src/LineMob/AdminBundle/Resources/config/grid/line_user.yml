@@ -1,0 +1,39 @@
+sylius_grid:
+    grids:
+        linemob_admin_line_user:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%linemob.model.line_user.class%"
+
+            limits: [20]
+
+            sorting:
+                createdAt: desc
+
+            filters: ~
+
+            fields:
+                lineUserId:
+                    type: string
+                    label: รหัสผู้ใช้งาน
+                    sortable: ~
+                webUserLocked:
+                    type: twig
+                    label: ผูกกับ
+                    options:
+                        template: "@LineMobAdmin/User/Grid/Field/webUser.html.twig"
+                loggedUser:
+                    type: twig
+                    label: เข้าระบบด้วย
+                    options:
+                        template: "@LineMobAdmin/User/Grid/Field/webUser.html.twig"
+                createdAt:
+                    type: datetime
+                    label: สร้างเมื่อ
+                    sortable: true
+                    options:
+                        format: d/m/Y H:i:s
+
+            actions:
+                item: ~

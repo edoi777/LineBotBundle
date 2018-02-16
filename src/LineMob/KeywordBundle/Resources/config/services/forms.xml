@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service class="LineMob\KeywordBundle\Form\Type\KeywordType">
+            <argument>%line_mob_keyword.model.keyword.class%</argument>
+            <argument type="collection">
+                <argument>linemob</argument>
+            </argument>
+            <tag name="form.type"/>
+        </service>
+        <service class="LineMob\KeywordBundle\Form\Type\AdditionalKeywordType">
+            <argument>%line_mob_keyword.model.additional_keyword.class%</argument>
+            <argument type="collection">
+                <argument>linemob</argument>
+            </argument>
+            <tag name="form.type"/>
+        </service>
+        <service class="LineMob\KeywordBundle\Form\Type\MessageType">
+            <argument>%line_mob_keyword.model.message.class%</argument>
+            <argument type="collection">
+                <argument>linemob</argument>
+            </argument>
+            <argument type="service" id="line_mob_keyword.registry.reply_message" />
+            <argument>%line_mob_keyword.reply_messages%</argument>
+            <tag name="form.type"/>
+        </service>
+    </services>
+</container>

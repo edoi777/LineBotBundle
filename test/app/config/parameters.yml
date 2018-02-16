@@ -1,0 +1,10 @@
+parameters:
+    database_driver: pdo_sqlite
+    database_path: "%kernel.root_dir%/db.sql"
+
+    locale: th_TH
+    secret: "Three can keep a secret, if two of them are dead."
+    line_channel_access_token: ~
+    line_channel_secret: ~
+    ngrok_dev_url: null
+    phpmob.imagine.default_image: ~

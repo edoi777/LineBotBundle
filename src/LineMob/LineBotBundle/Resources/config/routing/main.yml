@@ -1,0 +1,5 @@
+linemob_line_webhook:
+    path: /line-hook/{botName}
+    methods: [GET, POST]
+    defaults:
+        _controller: LineMobLineBotBundle:LineBot:hook

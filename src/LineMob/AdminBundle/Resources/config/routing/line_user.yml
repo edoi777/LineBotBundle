@@ -1,0 +1,12 @@
+linemob_admin_line_user_index:
+    path: /line-users/
+    methods: [GET]
+    defaults:
+        _controller: linemob.controller.line_user:indexAction
+        _sylius:
+            section: admin
+            grid: linemob_admin_line_user
+            template: "@ChangMin/Crud/index.html.twig"
+            vars:
+                icon: fa fa-user
+                header: "Users"

@@ -1,0 +1,12 @@
+linemob_admin_line_audit_input_index:
+    path: /line-audit-inputs/
+    methods: [GET]
+    defaults:
+        _controller: linemob.controller.line_audit_input:indexAction
+        _sylius:
+            section: admin
+            grid: linemob_admin_line_audit_input
+            template: "@ChangMin/Crud/index.html.twig"
+            vars:
+                icon: fa fa-commenting
+                header: "สถิติข้อมูลการใช้งาน"

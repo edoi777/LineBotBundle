@@ -1,0 +1,8 @@
+linemob_admin_line_user:
+    resource: "@LineMobAdminBundle/Resources/config/routing/line_user.yml"
+
+linemob_admin_line_audit_input:
+    resource: "@LineMobAdminBundle/Resources/config/routing/line_audit_input.yml"
+
+linemob_admin_line_keyword:
+    resource: "@LineMobAdminBundle/Resources/config/routing/line_keyword.yml"

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="linemob.middleware.clear_active_cmd" class="LineMob\Core\Middleware\ClearActiveCmdMiddleware" />
+        <service id="linemob.middleware.store_active_cmd" class="LineMob\Core\Middleware\StoreActiveCmdMiddleware" />
+        <service id="linemob.middleware.dummy_fallback" class="LineMob\Core\Middleware\DummyFallbackMiddleware" />
+        <service id="linemob.middleware.dump_log" class="LineMob\Core\Middleware\DumpLogMiddleware">
+            <argument type="string">%kernel.debug%</argument>
+        </service>
+
+        <!-- todo: move to core -->
+        <service id="linemob.middleware.exit_active_cmd" class="LineMob\LineBotBundle\Bot\Core\Middleware\ExitActiveCommandMiddleware">
+            <call method="setTranslator">
+                <argument type="service" id="translator" />
+            </call>
+        </service>
+        <service id="linemob.middleware.active_switcher" class="LineMob\LineBotBundle\Bot\Core\Middleware\ActiveSwitcherMiddleware">
+            <argument type="service" id="linemob.context.bot" />
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
+        </service>
+        <service id="linemob.middleware.fallback" class="LineMob\LineBotBundle\Bot\Core\Middleware\FallbackMiddleware">
+            <call method="setTranslator">
+                <argument type="service" id="translator" />
+            </call>
+        </service>
+    </services>
+</container>

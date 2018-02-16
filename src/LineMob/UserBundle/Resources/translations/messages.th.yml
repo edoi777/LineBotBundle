@@ -1,0 +1,25 @@
+linemob_user:
+    login:
+        already_logged: 'ขณะนี้คุณอยู่ในระบบแล้ว'
+        active_cmd_help: 'กรุณาพิมพ์ username เว้นวรรค ตามด้วย password เช่น "myusername 123456" หรือพิมพ์ ":exit" เพื่อออกจากคำสั่ง'
+        success: 'เข้าสู่ระบบสำเร็จ'
+        failure: 'username หรือ password ไม่ถูกต้อง'
+    logout:
+        empty_session: 'กรุณาเข้าระบบก่อนจะออกจากระบบ'
+        cannot_logout: 'ไม่สามารถออกจากระบบได้'
+        success: 'ออกจากระบบสำเร็จ'
+    register:
+        already_logged: 'ไม่สามารถสมัครสมาชิกได้ ในขณะที่คุณลงชื่อเข้าใช้อยู่'
+        cannot_register: 'ไม่สามารถสมัครสมาชิกได้'
+
+        email_input: 'กรุณาพิมพ์อีเมลที่ต้องการใช้ในระบบ'
+        email_input_invalid: 'รูปแบบอีเมลไม่ถูกต้อง'
+        email_input_already_used: 'อีเมลนี้ถูกใช้สมัครสมาชิกในระบบไปแล้ว'
+
+        password_input: 'กรุณาตั้งรหัสผ่าน'
+        password_confirm_input: 'กรุณาพิมพ์รหัสผ่านอีกครั้ง'
+        password_not_match: 'รหัสผ่านไม่ตรงกัน'
+
+        name_input: 'กรุณาพิมพ์ชื่อของคุณ'
+
+        success: 'การสมัครสมาชิกสมบูรณ์'

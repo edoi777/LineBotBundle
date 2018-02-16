@@ -1,0 +1,39 @@
+sylius_grid:
+    grids:
+        linemob_admin_keyword:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%line_mob_keyword.model.keyword.class%"
+                    repository:
+                        method: createListQueryBuilder
+
+            limits: [20]
+
+            sorting:
+                word: asc
+
+            fields:
+                word:
+                   type: string
+                   label: คำ
+                   sortable: ~
+
+            filters:
+                search:
+                    type: string
+                    label: Search
+                    options:
+                        default: true
+                        fields:
+                            - word
+                            - additionalKeyword.word
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete

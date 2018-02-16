@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <imports>
+        <import resource="services/**"/>
+    </imports>
+
+    <services>
+        <service id="linemob.message_factory" class="LineMob\Core\Factory\MessageFactory" public="false">
+            <tag name="linebot.message" class="LineMob\Core\Message\AudioMessage" />
+            <tag name="linebot.message" class="LineMob\Core\Message\ButtonsMessage" />
+            <tag name="linebot.message" class="LineMob\Core\Message\CarouselMessage" />
+            <tag name="linebot.message" class="LineMob\Core\Message\ConfirmMessage" />
+            <tag name="linebot.message" class="LineMob\Core\Message\ImageCarouselMessage" />
+            <tag name="linebot.message" class="LineMob\Core\Message\ImageMapMessage" />
+            <tag name="linebot.message" class="LineMob\Core\Message\ImageMessage" />
+            <tag name="linebot.message" class="LineMob\Core\Message\MultiMessage" />
+            <tag name="linebot.message" class="LineMob\Core\Message\LocationMessage" />
+            <tag name="linebot.message" class="LineMob\Core\Message\StickerMessage" />
+            <tag name="linebot.message" class="LineMob\Core\Message\TextMessage" />
+            <tag name="linebot.message" class="LineMob\Core\Message\VideoMessage" />
+        </service>
+
+        <service id="linemob.context.bot" class="LineMob\LineBotBundle\Context\LineBotContext" public="true" />
+
+        <service id="linemob.registry" class="LineMob\Core\Registry" public="false" abstract="true" />
+
+        <service id="linemob.registry.workflow" class="LineMob\Core\Workflow\WorkflowRegistry" public="false">
+            <argument type="service" id="event_dispatcher" />
+            <argument>%kernel.debug%</argument>
+        </service>
+
+        <service id="linemob.image_path_resolver" class="LineMob\LineBotBundle\Bot\Core\Image\ImagePathResolver">
+            <argument type="service" id="liip_imagine.cache.manager" />
+            <argument type="service" id="liip_imagine.controller" />
+            <argument type="service" id="assets.packages" />
+            <argument type="service" id="twig.extension.httpfoundation" />
+            <argument type="string">%ngrok_dev_url%</argument>
+        </service>
+    </services>
+</container>

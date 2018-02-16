@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
+    <class name="LineMob\KeywordBundle\Model\Keyword">
+        <property name="additionalKeywords">
+            <constraint name="Valid" />
+        </property>
+        <property name="messages">
+            <constraint name="Valid" />
+            <constraint name="Count">
+                <option name="min">1</option>
+                <option name="max">5</option>
+                <option name="groups">
+                    <value>linemob</value>
+                </option>
+            </constraint>
+        </property>
+        <property name="word">
+            <constraint name="LineMob\KeywordBundle\Validator\Constraints\KeywordsUnique">
+                <option name="groups">
+                    <value>linemob</value>
+                </option>
+            </constraint>
+            <constraint name="NotBlank">
+                <option name="groups">
+                    <value>linemob</value>
+                </option>
+            </constraint>
+        </property>
+    </class>
+</constraint-mapping>

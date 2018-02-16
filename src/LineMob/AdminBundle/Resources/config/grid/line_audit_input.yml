@@ -1,0 +1,47 @@
+sylius_grid:
+    grids:
+        linemob_admin_line_audit_input:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%linemob.model.line_audit_input.class%"
+
+            limits: [20]
+
+            sorting:
+                updatedAt: desc
+
+            filters:
+                keyword:
+                    type: string
+                    options:
+                        default: true
+
+            fields:
+                user:
+                    path: user.id
+                    type: string
+                    label: รหัสผู้ใช้งาน
+                    sortable: ~
+                    enabled: "%line_mob_user.audit.is_by_user_mode%"
+                hit:
+                    type: string
+                    label: จำนวนครั้ง
+                    sortable: ~
+                keyword:
+                    type: string
+                    label: ข้อความ
+                    sortable: ~
+                type:
+                    type: string
+                    label: ประเภทข้อความ
+                    sortable: ~
+                updatedAt:
+                    type: datetime
+                    label: ล่าสุดเมื่อ
+                    sortable: true
+                    options:
+                        format: d/m/Y H:i:s
+
+            actions:
+                item: ~

@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@LineMobAdminBundle/Resources/config/grid/main.yml" }

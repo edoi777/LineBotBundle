@@ -1,0 +1,32 @@
+linemob_admin_keyword:
+    resource: |
+        alias: line_mob_keyword.keyword
+        section: admin
+        templates: ChangMin:Crud
+        grid: linemob_admin_keyword
+        except: ['show']
+        redirect: update
+        permission: true
+        form:
+            type: LineMob\KeywordBundle\Form\Type\KeywordType
+        vars:
+            all:
+                templates:
+                    form: "@LineMobAdmin/Keyword/_form.html.twig"
+            index:
+                icon: fa fa-book
+                header: "รายการกลุ่มคำ"
+            create:
+                icon: fa fa-plus
+                header: "เพิ่มกลุ่มคำ"
+                breadcrumb:
+                    index:
+                        icon: fa fa-book
+                        label: "รายการกลุ่มคำ"
+            update:
+                header: "แก้ไขกลุ่มคำ"
+                breadcrumb:
+                    index:
+                        icon: fa fa-book
+                        label: "รายการกลุ่มคำ"
+    type: sylius.resource

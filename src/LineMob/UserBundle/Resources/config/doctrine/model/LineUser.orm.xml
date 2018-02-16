@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                                      http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <mapped-superclass name="LineMob\UserBundle\Model\LineUser" table="linemob_line_user">
+        <id name="id" type="integer">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <field name="lineActiveCmd" type="string" nullable="true"/>
+        <field name="lineActiveCmdExpiredAt" type="datetime" nullable="true"/>
+        <field name="lineCommandData" type="array" nullable="true"/>
+        <field name="lineUserId" type="string" nullable="true"/>
+        <field name="authState" type="string" nullable="true" length="30" />
+
+        <field name="createdAt" column="created_at" type="datetime">
+            <gedmo:timestampable on="create"/>
+        </field>
+
+        <field name="updatedAt" column="updated_at" type="datetime" nullable="true">
+            <gedmo:timestampable on="update"/>
+        </field>
+
+        <many-to-one field="loggedUser" target-entity="Sylius\Component\User\Model\UserInterface" fetch="EAGER">
+            <join-column name="logged_user_id" referenced-column-name="id" nullable="true" />
+        </many-to-one>
+        <many-to-one field="webUserLocked" target-entity="Sylius\Component\User\Model\UserInterface" fetch="EAGER">
+            <join-column name="locked_user_id" referenced-column-name="id" nullable="true" />
+        </many-to-one>
+    </mapped-superclass>
+</doctrine-mapping>

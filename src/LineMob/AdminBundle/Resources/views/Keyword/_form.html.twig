@@ -1,0 +1,42 @@
+{% form_theme form "@LineMobAdmin/Keyword/form_theme.html.twig"  %}
+
+<style type="text/css">
+    .collection-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #keyword_additionalKeywords [data-form-collection="item"] {
+        flex-basis: 33.33%;
+    }
+    #keyword_messages [data-form-collection="item"] {
+        flex-basis: 50%;
+    }
+</style>
+
+{{ form_errors(form) }}
+
+<div class="card p-3">
+    <div class="card-block">
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.word) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card p-3 mt-3">
+    <div class="card-block">
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.additionalKeywords) }}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card p-3 mt-3">
+    <h5>{{ form_label(form.messages) }}</h5>
+    <div class="card-block">
+        {{ form_widget(form.messages) }}
+    </div>
+</div>

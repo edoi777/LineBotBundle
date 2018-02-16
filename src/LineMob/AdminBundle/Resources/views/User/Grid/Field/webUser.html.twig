@@ -1,0 +1,5 @@
+{% if data %}
+    <a href="{{ path('sylius_admin_web_user_update', { id: data.id }) }}">{{ 'ดูข้อมูล' }}</a>
+{% else %}
+    {{ '-' }}
+{% endif %}

@@ -1,0 +1,10 @@
+sylius_resource:
+    resources:
+        linemob.line_user:
+            classes:
+                model: LineMob\UserBundle\Model\LineUser
+                interface: LineMob\UserBundle\Model\LineUserInterface
+        linemob.line_audit_input:
+            classes:
+                model: LineMob\UserBundle\Model\LineAuditInput
+                interface: LineMob\UserBundle\Model\LineAuditInputInterface

@@ -1,0 +1,27 @@
+sylius_resource:
+    resources:
+        line_mob_keyword.keyword:
+            classes:
+                model: LineMob\KeywordBundle\Model\Keyword
+                interface: LineMob\KeywordBundle\Model\KeywordInterface
+                repository: LineMob\KeywordBundle\Doctrine\ORM\KeywordRepository
+        line_mob_keyword.additional_keyword:
+            classes:
+                model: LineMob\KeywordBundle\Model\AdditionalKeyword
+                interface: LineMob\KeywordBundle\Model\AdditionalKeywordInterface
+        line_mob_keyword.message:
+            classes:
+                model: LineMob\KeywordBundle\Model\Message
+                interface: LineMob\KeywordBundle\Model\MessageInterface
+        line_mob_keyword.reply_text_message:
+            classes:
+                model: LineMob\KeywordBundle\Model\ReplyTextMessage
+        line_mob_keyword.reply_sticker_message:
+            classes:
+                model: LineMob\KeywordBundle\Model\ReplyStickerMessage
+        line_mob_keyword.reply_image_message:
+            classes:
+                model: LineMob\KeywordBundle\Model\ReplyImageMessage
+        line_mob_keyword.reply_image_message_picture:
+            classes:
+                model: LineMob\KeywordBundle\Model\ReplyImageMessagePicture
