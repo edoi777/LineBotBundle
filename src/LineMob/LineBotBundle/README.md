@@ -1,36 +1,27 @@
 # LineBotBundle
-
 LineBotBundle is a symfony bundle for the [https://github.com/linemob/core-php]
 
-
-## Installing
-
-Installing via `composer` is
-recommended.
-
-```yaml
-"require": {
-  "linemob/line-bot-bundle": "^1.0"
-}
-```
-
 ## Enabling
-
 And then enable bundle in `AppKernel.php`
 
 ```php
 public function registerBundles()
 {
     $bundles = [
-        ...
-        new \LineMob\LineBotBundle\LineMobLineBotBundle(),
+        ...       
+         new \LineMob\LineBotBundle\LineMobLineBotBundle(), # required
         ...
     ];
 }
 ```
 
-## Configuration
+```yaml
+# config.yml
+- { resource: "@LineMobLineBotBundle/Resources/config/app/main.yml" }
+```
 
+
+## Configuration
 ```yaml
 line_mob_line_bot:
     bots:
@@ -92,10 +83,9 @@ line_mob_line_bot:
                 - tactician.middleware.command_handler                    
 ```
 
-
-## Testing
+## Test line sender in local
 In order to testing without connect to line server. Just run script
 
 ```$php bin/console linemob:bot:mock_run {YOUR_BOT_NAME -t {YOUR_TEXT}```
 
-Remind!! : Bots config `use_sender_mocky` must be `true`.
+> Remind!! : Bots config `use_sender_mocky` must be `true`.

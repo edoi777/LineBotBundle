@@ -2,6 +2,8 @@
 
 UserBundle is a symfony bundle for user management.
 
+> Required!!! sylius-resource
+
 ## Enabling
 
 And then enable bundle in `AppKernel.php`
@@ -16,6 +18,10 @@ public function registerBundles()
         ...
     ];
 }
+```
+```yaml
+# config.yml
+- { resource: "@LineMobUserBundle/Resources/config/app/main.yml" }
 ```
 
 ## Configuration
