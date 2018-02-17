@@ -86,6 +86,6 @@ line_mob_line_bot:
 ## Test line sender in local
 In order to testing without connect to line server. Just run script
 
-```$php bin/console linemob:bot:mock_run {YOUR_BOT_NAME -t {YOUR_TEXT}```
+```$php bin/console linemob:bot:mock_run {YOUR_BOT_NAME} -t {YOUR_TEXT}```
 
 > Remind!! : Bots config `use_sender_mocky` must be `true`.
