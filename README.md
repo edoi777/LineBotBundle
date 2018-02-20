@@ -1,6 +1,13 @@
 ## Installation
+@see https://igor.io/2013/02/07/composer-stability-flags.html
+
+> Now you have to set require dependency like this during developing.
 ```yaml
 "require": {
+  "sylius/grid": "1.2.x-dev",
+  "sylius/grid-bundle": "1.2.x-dev",
+  "linemob/core-php": "dev-master",
+  "phpmob/changmin": "dev-master",
   "phakpoom/line-bot-bundle": "dev-master"
 }
 ```
