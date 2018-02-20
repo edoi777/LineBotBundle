@@ -8,7 +8,7 @@
   "sylius/grid-bundle": "1.2.x-dev",
   "linemob/core-php": "dev-master",
   "phpmob/changmin": "dev-master",
-  "phakpoom/line-bot-bundle": "dev-master"
+  "phakpoom/linebot-bundle": "dev-master"
 }
 ```
 ## README.md
