@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "04281e1a5301af85a8afcee874f481af",
+    "content-hash": "9826568357ddcdbba089c29d99d7843b",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -4660,12 +4660,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpmob/changmin.git",
-                "reference": "42c46e5c691a9f634e4f406654948c21e645451f"
+                "reference": "cc14c7d0546dff5798e832136e290c58eb9aed4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpmob/changmin/zipball/42c46e5c691a9f634e4f406654948c21e645451f",
-                "reference": "42c46e5c691a9f634e4f406654948c21e645451f",
+                "url": "https://api.github.com/repos/phpmob/changmin/zipball/cc14c7d0546dff5798e832136e290c58eb9aed4e",
+                "reference": "cc14c7d0546dff5798e832136e290c58eb9aed4e",
                 "shasum": ""
             },
             "require": {
@@ -4743,7 +4743,7 @@
             "license": [
                 "proprietary"
             ],
-            "time": "2018-02-15 19:49:26"
+            "time": "2018-02-16 13:30:27"
         },
         {
             "name": "phpmob/settings",
@@ -8702,16 +8702,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.7.4",
+            "version": "1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "9f901e29c93dae4aa77c0bb161df4276f9c9a1be"
+                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/9f901e29c93dae4aa77c0bb161df4276f9c9a1be",
-                "reference": "9f901e29c93dae4aa77c0bb161df4276f9c9a1be",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/dfd6be44111a7c41c2e884a336cc4f461b3b2401",
+                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401",
                 "shasum": ""
             },
             "require": {
@@ -8761,7 +8761,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-02-11T18:49:29+00:00"
+            "time": "2018-02-19T10:16:54+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",

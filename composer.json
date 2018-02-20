@@ -16,7 +16,7 @@
     "linemob/core-php": "dev-master",
     "php-http/guzzle6-adapter": "^1.1",
     "php-http/httplug-bundle": "^1.4",
-    "phpmob/changmin": "dev-master",
+    "phpmob/changmin": "1.0.x-dev",
     "symfony/symfony": "3.4.*"
   },
   "require-dev": {
