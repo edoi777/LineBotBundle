@@ -1,7 +1,7 @@
 ## Installation
 @see https://igor.io/2013/02/07/composer-stability-flags.html
 
-> Now you have to set require dependency like this during developing.
+> Now you have to set require dependency like this during developing. 
 ```yaml
 "require": {
   "sylius/grid": "1.2.x-dev",
