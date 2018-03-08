@@ -75,7 +75,7 @@ final class LineBotContext implements Context
     }
 
     /**
-     * @Then ข้อความจากไลน์บอท จะต้องตอบกลับเป็น Carousel
+     * @Then /^(ข้อความจากไลน์บอท) จะต้องตอบกลับเป็น Carousel$/
      */
     public function shouldGetCarousel($response)
     {
