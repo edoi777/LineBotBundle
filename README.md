@@ -24,4 +24,5 @@
 ## Testing
 ```
 $ ./vendor/bin/phpunit
+$ ./vendor/bin/behat
 ```

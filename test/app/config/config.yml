@@ -37,6 +37,7 @@ line_mob_line_bot:
             line_channel_secret: "%line_channel_secret%"
             use_sender_mocky: true
             commands:
+                - LineMob\Core\Command\FallbackCommand
                 - LineMob\LineBotBundle\Bot\Core\Command\ExitActiveCommand
             middlewares:
                 - tactician.middleware.locking

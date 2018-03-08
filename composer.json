@@ -25,7 +25,15 @@
   "require-dev": {
     "phpunit/phpunit": "^5.6",
     "matthiasnoback/symfony-config-test": "^2.0",
-    "matthiasnoback/symfony-dependency-injection-test": "^1.0"
+    "matthiasnoback/symfony-dependency-injection-test": "^1.0",
+    "behat/behat": "^3.2",
+    "friends-of-behat/context-service-extension": "^0.3",
+    "friends-of-behat/cross-container-extension": "^0.2",
+    "friends-of-behat/performance-extension": "^1.0",
+    "friends-of-behat/service-container-extension": "^0.3",
+    "friends-of-behat/suite-settings-extension": "^1.0",
+    "friends-of-behat/symfony-extension": "^0.2.1",
+    "webmozart/assert": "^1.2"
   },
   "extra": {
     "branch-alias": {

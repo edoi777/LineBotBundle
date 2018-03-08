@@ -23,7 +23,7 @@ class ExitActiveCommandMiddleware implements Middleware, TranslatorAwareInterfac
      */
     public function execute($command, callable $next)
     {
-        if (!$command instanceof ExitActiveCommand) {
+        if (!$command instanceof ExitActiveCommand || !$command->storage) {
             return $next($command);
         }
 

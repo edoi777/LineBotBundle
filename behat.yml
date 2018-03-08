@@ -1,0 +1,24 @@
+default:
+    extensions:
+        FriendsOfBehat\ContextServiceExtension:
+            imports:
+                - "src/LineMob/Behat/Resources/config/services.xml"
+
+        FriendsOfBehat\CrossContainerExtension: ~
+
+        FriendsOfBehat\SuiteSettingsExtension:
+            paths:
+                - "features"
+
+        FriendsOfBehat\SymfonyExtension:
+            kernel:
+                class: AppTestKernel
+                path: tests/app/AppTestKernel.php
+                bootstrap: vendor/autoload.php
+    suites:
+        linemob:
+            contexts_services:
+                - linemob.behat.context.line_bot
+                - linemob.behat.transform.line_bot
+            filters:
+                tags: "@linemob"
