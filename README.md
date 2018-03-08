@@ -26,3 +26,12 @@
 $ ./vendor/bin/phpunit
 $ ./vendor/bin/behat
 ```
+
+LineBotBundle provide behat context for testing response from line just add context see below: 
+```yaml
+# behat.yml
+default:
+    FriendsOfBehat\ContextServiceExtension:
+         imports:
+              - "vendor/phakpoom/linebot-bundle/src/LineMob/Behat/Resources/config/services.xml" # add this
+```
