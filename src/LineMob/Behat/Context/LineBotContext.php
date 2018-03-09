@@ -75,6 +75,15 @@ final class LineBotContext implements Context
     }
 
     /**
+     * @Then /^(ข้อความจากไลน์บอท) จะต้องตอบกลับเป็น ImageMap และมี action ทั้งหมด (\d+)$/
+     */
+    public function shouldGetImageMap($response, $actionsCount)
+    {
+        Assert::eq('imagemap', $response[0]['$messageBuilder'][0]['type']);
+        Assert::count($response[0]['$messageBuilder'][0]['actions'], $actionsCount);
+    }
+
+    /**
      * @Then /^(ข้อความจากไลน์บอท) จะต้องตอบกลับเป็น Carousel$/
      */
     public function shouldGetCarousel($response)
