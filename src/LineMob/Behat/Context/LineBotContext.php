@@ -67,7 +67,7 @@ final class LineBotContext implements Context
     }
 
     /**
-     * @Then ข้อความจากไลน์บอท จะต้องตอบกลับเป็นรูป
+     * @Then /^(ข้อความจากไลน์บอท) จะต้องตอบกลับเป็นรูป$/
      */
     public function shouldGetImage($response)
     {
