@@ -102,6 +102,18 @@ final class LineBotContext implements Context
     }
 
     /**
+     * @Then /^(ข้อความจากไลน์บอท) ที่เป็น Button ช่องที่ (\d+) จะปรากฏคำว่า "(.+)" และเมื่อกดจะได้คำว่า "(.+)"$/
+     */
+    public function shouldHasButtonWithText($response, $buttonIndex, $label, $message)
+    {
+        $buttonIndex = $buttonIndex - 1;
+
+        Assert::eq('message', $response[0]['$messageBuilder'][0]['template']['actions'][$buttonIndex]['type']);
+        Assert::eq($label, $response[0]['$messageBuilder'][0]['template']['actions'][$buttonIndex]['label']);
+        Assert::eq($message, $response[0]['$messageBuilder'][0]['template']['actions'][$buttonIndex]['text']);
+    }
+
+    /**
      * @Then /^(ข้อความจากไลน์บอท) จะต้องตอบกลับเป็น Multiple$/
      */
     public function shouldGetMultiple($response)
