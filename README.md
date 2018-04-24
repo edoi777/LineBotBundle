@@ -7,7 +7,7 @@
   "sylius/grid": "1.2.x-dev",
   "sylius/grid-bundle": "1.2.x-dev",
   "linemob/core-php": "dev-master",
-  "phpmob/changmin": "dev-master",
+  "phpmob/changmin": "dev-node4",
   "phakpoom/linebot-bundle": "dev-master"
 }
 ```
