@@ -118,7 +118,7 @@ final class LineBotContext implements Context
      */
     public function shouldGetMultiple($response)
     {
-        Assert::greaterThan(count($response[0]['$messageBuilder']), 1);
+        Assert::greaterThanEq(count($response[0]['$messageBuilder']), 1);
     }
 
     /**
